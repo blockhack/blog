@@ -1,5 +1,86 @@
 baseURL = "/"
-languageCode = "en-us"
-title = "Kenny's Blog"
-theme = "beg"
+languageCode = "zh-cn"
+title = "Kenny"
+theme = "whiteplain"
 publishDir = "docs"
+
+# Disqus shortname
+# disqusShortname = "Shortname"
+# google analytics tracking id
+# googleAnalytics = "Toracking ID"
+
+# Copyright notice. This is displayer in the footer.
+copyright = "&copy; Copyright 2018 Kenny"
+
+[params]
+  # Date format
+  #dateFormat = "January 2, 2006"
+
+# This is displayer in About page.
+[params.author]
+  name = "Kenny"
+  # Gravatar or Abatar image
+  # gravatar = "Gravatar email or MD5 Hash"
+  avatar = "/images/avatar.jpg"
+
+  email = "k@m.fish"
+  github = "thatk"
+  linkedin = "thatk"
+  instagram = "gxxoogle"
+
+  # twitter = "Twitter username"
+  # facebook = "Facebook username"
+  # googleplus = "Googleplus username"
+  # tumblr = "Tumblr username"
+  # flickr = "Flickr username"
+  # reddit = "Reddit username"
+  # slideshare = "Slideshare username"
+  # gitlab = "Gitlab username"
+  # bitbucket = "Bitbucket username"
+  # stackoverflow = "Stackoverflow username"
+  # jsfiddle = "Jsfiddle username"
+  # codepen = "Codepen username"
+  # deviantart = "Deviantart username"
+  # behance = "Behance username"
+  # dribbble = "Dribbble username"
+  # wordpress = "Wordpress username"
+  # medium = "Medium username"
+  # foursquare = "Foursquare username"
+  # xing = "Xing username"
+  # quora = "Quora username"
+  # youtube = "Youtube username"
+  # vimeo = "Vimeo username"
+  # whatsapp = "Whatsapp username"
+  # skype = "Skype username"
+  # snapchat = "Snapchat username"
+  # pinterest = "Pinterest username"
+  # telegram = "Telegram username"
+  # vine = "Vine username"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# Header Menu
+[[menu.main]]
+  name = "CATEGORIE"
+  identifier = "categories"
+  url = "/categories/"
+  weight = 1
+[[menu.main]]
+  name = "TAG"
+  identifier = "tags"
+  url = "/tags/"
+  weight = 2
+[[menu.main]]
+  name = "ABOUT"
+  identifier = "about"
+  url = "/about/"
+  weight = 4
+# # Footer Menu
+# [[menu.footer]]
+#   name = "About"
+#   weight = 1
+#   identifier = "about"
+#   url = "/about/"

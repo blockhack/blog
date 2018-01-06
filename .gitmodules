@@ -1,3 +1,9 @@
 [submodule "themes/beg"]
 	path = themes/beg
 	url = https://github.com/dim0627/hugo_theme_beg.git
+[submodule "themes/nuo"]
+	path = themes/nuo
+	url = https://github.com/laozhu/hugo-nuo
+[submodule "themes/whiteplain"]
+	path = themes/whiteplain
+	url = https://github.com/taikii/whiteplain

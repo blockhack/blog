@@ -1,2 +1,1 @@
-# blog
-Kenny's Blog
+# Kenny's Blog

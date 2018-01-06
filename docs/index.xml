@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kenny&#39;s Blog</title>
+    <title>Kenny</title>
     <link>/</link>
-    <description>Recent content on Kenny&#39;s Blog</description>
+    <description>Recent content on Kenny</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
+    <managingEditor>k@m.fish (Kenny)</managingEditor>
+    <webMaster>k@m.fish (Kenny)</webMaster>
+    <copyright>&amp;copy; Copyright 2018 Kenny</copyright>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
