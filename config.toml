@@ -1,0 +1,5 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Kenny's Blog"
+theme = "beg"
+publishDir = "docs"
