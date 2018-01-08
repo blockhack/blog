@@ -18,6 +18,9 @@
           <h2 class="article-title">{{ .Title }}</h2>
           {{ with .Params.subtitle }}<h3 class="article-subtitle">{{ . }}</h3>{{ end }}
         </a>
+        <div class="article-description">
+          摘要：{{ .Description }}
+        </div>
         <ul class="article-meta">
           <li class="article-meta-date"><time>{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></li>
           {{- if .Params.categories }}
@@ -44,13 +47,14 @@
         {{- if .Params.image }}
         <a href="{{ .Permalink | relURL }}"><img src="{{ .Params.image }}" class="article-image" /></a>
         {{- end }}
-        <div class="article-content">
+
+        <!-- <div class="article-content">
           {{- if .Truncated }}
           {{ .Summary }}
           {{- else }}
           {{ .Content }}
           {{- end }}
-        </div>
+        </div> -->
         <div class="article-readmore"><a href="{{ .Permalink | relURL }}">Read more...</a></div>
         <div class="article-floatclear"></div>
       </article>
