@@ -76,7 +76,7 @@ copyright = "&copy; Copyright 2018 Kenny"
 [[menu.main]]
   name = "ABOUT"
   identifier = "about"
-  url = "/about/index.html"
+  url = "/about/"
   weight = 4
 # # Footer Menu
 # [[menu.footer]]
