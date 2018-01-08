@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dockerfile on Kenny</title>
+    <link>/tags/dockerfile/</link>
+    <description>Recent content in Dockerfile on Kenny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>k@m.fish (Kenny)</managingEditor>
+    <webMaster>k@m.fish (Kenny)</webMaster>
+    <copyright>&amp;copy; Copyright 2017-2018 Kenny</copyright>
+    <lastBuildDate>Thu, 26 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/dockerfile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dockerfile入门：用Dockerfile创建CentOS&#43;Nginx - Docker实践教程(2)</title>
+      <link>/posts/docker/helloworld_2/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/posts/docker/helloworld_2/</guid>
+      <description>上一篇文章 讲了docker的hello world以及常用的几个docker命令，这篇中我们来创建image。
+Dockerfile 首先创建一个 Dockerfile 并进入编辑模式：
+$ cd /path/to/some/folder $ touch Dockerfile $ vi Dockerfile  编辑文件内容如下：
+FROM centos:latest MAINTAINER Kenny Yao &amp;lt;k@m.fish&amp;gt; ADD nginx.repo /etc/yum.repos.d/nginx.repo RUN yum install -y nginx RUN yum clean all RUN echo &amp;quot;daemon off;&amp;quot; &amp;gt;&amp;gt; /etc/nginx/nginx.conf EXPOSE 80 CMD [&amp;quot;nginx&amp;quot;]  FROM：Dockerfile文件都是以 FROM 开头的，指定此镜像以哪个基础镜像创建，我们以 centos 的最新版本 latest 建立此镜像。MAINTAINER 为该镜像的维护者的信息。 RUN：在创建镜像时运行命令； ADD：向镜像中添加本地文件； EXPOSE：指定容器在运行时监听的端口。 daemon off;：该指令告诉nginx在前台运行，更多说明参照：nginx.org，以及这条Stackoverflow问题：What is the difference between nginx daemon on/off option?，如果不在nginx.conf中加这行，也可以在CMD命令中这样写：
+CMD [&amp;quot;nginx&amp;quot;,&amp;quot;-g&amp;quot;,&amp;quot;daemon off;&amp;quot;]  CMD：提供了容器默认的执行命令。</description>
+    </item>
+    
+  </channel>
+</rss>

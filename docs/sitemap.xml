@@ -8,8 +8,13 @@
   </url>
   
   <url>
-    <loc>/posts/my-first-post/</loc>
-    <lastmod>2018-01-08T11:13:02+08:00</lastmod>
+    <loc>/posts/docker/helloworld_2/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/docker/helloworld_1/</loc>
+    <lastmod>2016-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,14 +23,38 @@
   </url>
   
   <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/docker/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/dockerfile/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/helloworld/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2018-01-08T11:13:02+08:00</lastmod>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2018-01-08T11:13:02+08:00</lastmod>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -36,6 +65,7 @@
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

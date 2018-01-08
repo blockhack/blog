@@ -1,9 +1,7 @@
-html {
-  font-size: 1em;
-}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-  color: #444444;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+  font-size: 15px;
+  color: #262626;
   overflow-y: scroll;
   line-height: 1.2;
 }
@@ -20,15 +18,23 @@ hr {
   border-top: solid 1px lightgray;
   margin: 0;
 }
-pre, code {
-  font-family: monospace, serif;
-  background-color: lightgray;
-  padding-left: 4px;
-  padding-right: 4px;
+.main .article p code{
+  padding: 0.2em 0.4em;
+  margin: 0 2px;
+  font-size: 14px;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
 }
+
 pre {
-  padding: 4px;
+  padding: 12px 16px;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
 }
+
 blockquote {
   margin: 0;
   margin-left: 40px;
@@ -73,7 +79,7 @@ blockquote blockquote blockquote blockquote {
 .site-title {
   -webkit-flex-grow: 1;
   flex-grow: 1;
-  font-size: 2rem;
+  font-size: 1.2em;
   margin: 0;
   margin-top: 10px;
   padding: 0;
@@ -138,6 +144,7 @@ blockquote blockquote blockquote blockquote {
 .article img {
   border: solid 1px lightgray;
   padding: 4px;
+  width: 100%;
 }
 .article > table {
   width: auto;
@@ -193,13 +200,15 @@ blockquote blockquote blockquote blockquote {
 .article .article-meta {
   list-style-type: none;
   padding: 0;
-  margin: 5px 0 40px 0;
+  margin: 5px 0 30px 0;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: flex-end;
   align-items: flex-end;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  font-size: 13px;
+  color: #586069;
 }
 .article-meta a {
   color: inherit;
@@ -214,7 +223,7 @@ blockquote blockquote blockquote blockquote {
 }
 .article-meta li.article-meta-date {
   padding: 0;
-  padding-right: 24px;
+  padding-right: 15px;
 }
 
 .article-series {
@@ -371,12 +380,17 @@ blockquote blockquote blockquote blockquote {
 .list .article-titles {
   color: inherit;
 }
+.list .article-description{
+  margin-top: 10px;
+}
 .list .article-titles:hover, .list .article-titles:active {
   color: gray;
 }
 .list .article-meta {
-  margin-top: 6px;
-  margin-bottom: 15px;
+  font-size: 13px;
+  color: #586069;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .list .article-image {
   width: 200px;
@@ -595,5 +609,5 @@ blockquote blockquote blockquote blockquote {
     width: 100%;
     box-sizing: border-box;
   }
-  
+
 }

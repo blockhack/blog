@@ -144,6 +144,7 @@ blockquote blockquote blockquote blockquote {
 .article img {
   border: solid 1px lightgray;
   padding: 4px;
+  width: 100%;
 }
 .article > table {
   width: auto;
@@ -199,13 +200,15 @@ blockquote blockquote blockquote blockquote {
 .article .article-meta {
   list-style-type: none;
   padding: 0;
-  margin: 5px 0 40px 0;
+  margin: 5px 0 30px 0;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: flex-end;
   align-items: flex-end;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  font-size: 13px;
+  color: #586069;
 }
 .article-meta a {
   color: inherit;

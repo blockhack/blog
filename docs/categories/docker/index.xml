@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Kenny</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on Kenny</description>
+    <title>Docker on Kenny</title>
+    <link>/categories/docker/</link>
+    <description>Recent content in Docker on Kenny</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>k@m.fish (Kenny)</managingEditor>
@@ -11,7 +11,7 @@
     <copyright>&amp;copy; Copyright 2017-2018 Kenny</copyright>
     <lastBuildDate>Thu, 26 May 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

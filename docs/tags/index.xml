@@ -8,10 +8,38 @@
     <language>zh-cn</language>
     <managingEditor>k@m.fish (Kenny)</managingEditor>
     <webMaster>k@m.fish (Kenny)</webMaster>
-    <copyright>&amp;copy; Copyright 2018 Kenny</copyright>
+    <copyright>&amp;copy; Copyright 2017-2018 Kenny</copyright>
+    <lastBuildDate>Thu, 26 May 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dockerfile</title>
+      <link>/tags/dockerfile/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/tags/dockerfile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Helloworld</title>
+      <link>/tags/helloworld/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/tags/helloworld/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

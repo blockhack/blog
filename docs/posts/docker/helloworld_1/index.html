@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Docker入门 - Docker实践教程(1) - Kenny</title>
+  <meta property="og:title" content="Docker入门 - Docker实践教程(1) - Kenny" />
+  <meta name="twitter:title" content="Docker入门 - Docker实践教程(1) - Kenny" />
+  <meta name="description" content="Docker极简入门(1)">
+  <meta property="og:description" content="Docker极简入门(1)">
+  <meta name="twitter:description" content="Docker极简入门(1)">
+  <meta name="author" content="Kenny"/>
+  <link rel='icon' type='image/x-icon' href="/images/favicon.ico" />
+  <meta property="og:site_name" content="Kenny" />
+  <meta property="og:url" content="/posts/docker/helloworld_1/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.32.2" />
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">Kenny</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-categories"><a href="/categories/" title="Categories">Categories</a></li>
+      <li class="site-navi-item-tags"><a href="/tags/" title="Tags">Tags</a></li>
+      <li class="site-navi-item-about"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">Docker入门 - Docker实践教程(1)</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>May 25, 2016</time></li>
+        <li class="article-meta-categories">
+          <a href="/categories/docker/">
+            <svg class="icon"><use xlink:href="/images/fa-solid.svg#folder"></use></svg>
+            docker
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/docker/">
+            <svg class="icon"><use xlink:href="/images/fa-solid.svg#tag"></use></svg>
+            docker
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/helloworld/">
+            <svg class="icon"><use xlink:href="/images/fa-solid.svg#tag"></use></svg>
+            helloworld
+          </a>&nbsp;
+        </li>
+      </ul>
+      
+      
+
+<p>接触docker有一段时间了，但之前的使用仅限于使用别人的镜像搭建shadowsocks和pptp，并没有深入研究。最近开始研究docker，先从搭建公司产品的开发环境入手，期望能探索一下docker在生产/测试环境中的最佳实践，提升公司研发团队的研发体验。所以有了这个系列文章。
+Docker在各种环境的安装指南：<a href="https://docs.docker.com/engine/installation">Docker Installation</a>
+Mac用户请安装官方提供的：<a href="https://docs.docker.com/engine/installation/mac/">Docker Toolbox</a>
+貌似也可以安装（并没有用过）：<a href="http://boot2docker.io">Boot2docker</a></p>
+
+<h2 id="hello-world">Hello World</h2>
+
+<p>安装完成之后，可以输入下面的命令来查看Docker的信息：</p>
+
+<pre><code class="language-bash">$ docker info
+</code></pre>
+
+<p>或仅查看docker的版本信息：</p>
+
+<pre><code class="language-bash">$ docker version
+</code></pre>
+
+<p>获得docker命令帮助：</p>
+
+<pre><code class="language-bash">$ docker --help
+</code></pre>
+
+<p>获得特定命令帮助（以run命令为例）：</p>
+
+<pre><code class="language-bash">$ docker run --help
+</code></pre>
+
+<p>下面我们启动一个centos来输出我们的docker hello world：</p>
+
+<pre><code class="language-bash">$ docker run centos /bin/echo 'Hello world'
+</code></pre>
+
+<p><strong>docker run</strong> 命令来运行一个容器（container），<strong>centos</strong> 是我们这次容器里面运行的镜像（image）。当你指定运行一个镜像的时候，docker首先会查找你本地的docker环境是否已存在该镜像，如果不存在，则会去 <a href="https://hub.docker.com">Docker Hub</a> 拉取（pull）这个镜像的最新版本。或者你可以选择在run某个镜像之前，手动运行 <strong>docker pull some/image</strong> 来下载某个镜像到本地docker环境。已经pull到本地的镜像可以通过 <strong>docker images</strong> 命令来查看。
+<strong>/bin/echo &lsquo;Hello world&rsquo;</strong> 是我们在容器中运行的命令。如果想在运行centos之后进入命令行，可以使用以下命令：</p>
+
+<pre><code class="language-bash">$ docker run -t -i centos /bin/bash
+</code></pre>
+
+<p><strong>-t</strong> 命令让docker分配一个伪终端（pseudo-TTY）给当前容器
+<strong>-i</strong> 命令让容器持续接收用户输入
+<strong>/bin/bash</strong> 大家都懂这是干嘛的
+更多<strong>docker run</strong>命令的参数请参看：<a href="https://docs.docker.com/engine/reference/commandline/run/">docker run</a>，后面也会介绍其他几个用到的参数。</p>
+
+<p>以上几步的运行截图：
+<img src="/img/docker/docker1-1.png" alt="docker hello world" /></p>
+
+<h2 id="docker-daemon">Docker Daemon</h2>
+
+<p>下面我们来创建一个守护程序（daemon）：</p>
+
+<pre><code class="language-bash">$ docker run -d centos /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;
+</code></pre>
+
+<p><strong>-d</strong> 命令让容器在后台运行（to daemonize）
+运行一个daemon之后会获得容器的长id
+如果你启动了一个或多个daemon，可以通过以下命令来查看各个容器的信息：</p>
+
+<pre><code class="language-bash">$ docker ps
+</code></pre>
+
+<p>运行 <strong>docker ps</strong> 之后会获得容器的短id、容器name，以及镜像信息、运行状态等其他信息：
+<img src="/img/docker/docker1-2.png" alt="docker daemon" /></p>
+
+<p>可以看到docker给刚才创建的容器起了一个随机的name，当然我们也可以选择在 <strong>docker run</strong> 的时候使用 <strong>&ndash;name</strong> 参数来指定容器名。</p>
+
+<p>长id、短id、name，都可以用来唯一指定一个容器，比如查看我们刚才创建的容器运行的状况，以下三个命令是等价的：</p>
+
+<pre><code class="language-bash">$ docker logs 7984414fda90b87703c33348c12996380807eba5bd0b6c53ac5390897027781a
+$ docker logs 7984414fda90
+$ docker logs gloomy_leavitt
+</code></pre>
+
+<p>以上规则同样适用于停止一个容器的时候，以下三个命令都可以实现stop操作：</p>
+
+<pre><code class="language-bash">$ docker stop 7984414fda90b87703c33348c12996380807eba5bd0b6c53ac5390897027781a
+$ docker stop 7984414fda90
+$ docker stop gloomy_leavitt
+</code></pre>
+
+<p>这时候再次运行 <strong>docker ps</strong> 可以看到刚才的容器已不存在列表中了
+运行 <strong>docker ps -l</strong> 可以看到看到上一个启动的容器（不管是否stop）
+运行 <strong>docker ps -a</strong> 可以看到看到全部启动的容器
+已经stop的容器可以通过 <strong>docker start</strong> 命令再次运行</p>
+
+<pre><code class="language-bash">$ docker start gloomy_leavitt
+</code></pre>
+
+<p>已经stop的容器也可以通过 <strong>docker rm</strong> 命令来删除</p>
+
+<p>同样的，image也可以删除，通过 <strong>docker rmi</strong> 命令，前提是没有依赖该image的容器运行，且没有其他image依赖这个image。若因以上原因无法删除，可以增加 <strong>-f</strong> 命令来强制删除， <strong>-f</strong> 命令同样适用于 <strong>docker rm</strong> 命令。使用 <strong>-f</strong> 删除会导致已启动的相关容器停止运行。</p>
+
+<p><a href="/posts/docker/helloworld_2">下一篇文章</a> 会介绍Dockerfile。</p>
+
+    </article>
+
+    
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer">
+          <a href="/posts/docker/helloworld_2/" data-toggle="tooltip" data-placement="top" title="Dockerfile入门：用Dockerfile创建CentOS&#43;Nginx - Docker实践教程(2)">&lt; Newer</a>
+      </li>
+      <li class="pager-older pager-noitem">Older &gt;</li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright">&copy; Copyright 2017-2018 Kenny</div>
+  <ul class="site-footer-items">
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>
+  </div>
+</div>
+<script src="/js/script.js"></script>
+<script src="/js/custom.js"></script>
+
+
+</body>
+</html>
