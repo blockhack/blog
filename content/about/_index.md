@@ -1,5 +1,5 @@
 ---
 title: "About"
-date: 2018-01-06T19:16:48+08:00
+date: 2018-01-08T11:19:11+08:00
 ---
-haha
+Serial Entrepreneur / Engineer /
