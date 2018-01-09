@@ -16,6 +16,7 @@ copyright = "&copy; Copyright 2017-2018 Kenny"
   # Date format
   #dateFormat = "January 2, 2006"
   favicon = "/images/favicon.ico"
+  toc = true
 # This is displayer in About page.
 [params.author]
   name = "Kenny"
