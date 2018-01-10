@@ -108,8 +108,10 @@ func checkError(err error) {
 		os.Exit(1)
 	}
 }
-
 ```
+以上代码创建了一个TCP连接conn，通过conn来发送请求信息，最后通过ioutil.ReadAll从conn中读取全部的文本，也就是服务端响应反馈的信息。
+
 ### 参考文章
+- [Go官方文档 - net](https://golang.org/pkg/net)
 - [Build web application with Golang - Astaxie](https://astaxie.gitbooks.io/build-web-application-with-golang/content/zh/08.1.html)
 - [Using Network Sockets With The Go Programming Language - Nic Raboy](https://www.thepolyglotdeveloper.com/2017/05/network-sockets-with-the-go-programming-language/)
