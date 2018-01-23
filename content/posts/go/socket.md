@@ -1,5 +1,5 @@
 ---
-title: Go语言构建Socket应用
+title: Go语言构建Socket应用(未完)
 author: Kenny
 description: 如何用Go语言来构建简单的Socket应用，实现一个简单的聊天程序。
 date: 2018-01-08
@@ -9,7 +9,6 @@ tags:
   - golang
   - socket
 slug: socket
-draft: true
 ---
 
 本文主要介绍如何用Go语言来构建Socket应用。
@@ -110,7 +109,7 @@ func checkError(err error) {
 }
 ```
 以上代码创建了一个TCP连接conn，通过conn来发送请求信息，最后通过ioutil.ReadAll从conn中读取全部的文本，也就是服务端响应反馈的信息。
-
+(未完占坑)
 ### 参考文章
 - [Go官方文档 - net](https://golang.org/pkg/net)
 - [Build web application with Golang - Astaxie](https://astaxie.gitbooks.io/build-web-application-with-golang/content/zh/08.1.html)

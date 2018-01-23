@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>/posts/go/socket/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/docker/helloworld_2/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
@@ -41,6 +46,18 @@
   </url>
   
   <url>
+    <loc>/tags/golang/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/golang/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/helloworld/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -48,18 +65,24 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/socket/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Kenny</title>
+    <link>/categories/golang/</link>
+    <description>Recent content in Golang on Kenny</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>k@m.fish (Kenny)</managingEditor>
+    <webMaster>k@m.fish (Kenny)</webMaster>
+    <copyright>&amp;copy; Copyright 2017-2018 Kenny</copyright>
+    <lastBuildDate>Mon, 08 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go语言构建Socket应用(未完)</title>
+      <link>/posts/go/socket/</link>
+      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/posts/go/socket/</guid>
+      <description>本文主要介绍如何用Go语言来构建Socket应用。
+Go语言实现Socket其实很容易，net包中对网络协议的封装已经非常完善，直接利用即可。当我们谈到Socket的时候，一般场景指的是服务端和客户端的&amp;rdquo;双向通信&amp;rdquo;，而通信就需要建立连接通道。Go语言中这个“通道”可以用net包中的类型Conn来表示，而TCPConn和UDPConn为Conn对应于TCP和UDP协议的实现。本文仅以TCP为例来介绍Go语言的Socket实现（UDP实现差异不大）。
+Simple Server 我们使用 TCPConn 在客户端和服务器端来读写数据以及管理连接，主要用到Read、Write、Close这三个方法：
+func (c *TCPConn) Read(b []byte) (int, error) func (c *TCPConn) Write(b []byte) (int, error) func (c *TCPConn) Close() error ###  下面我们先来创建一个服务端，使用net包中的ListenTCP方法来建立一个TCP网络监听：
+func ListenTCP(network string, laddr *TCPAddr) (*TCPListener, error)  此方法接收两个参数，network为TCP网络名字符串，TCPAddr为TCP的地址信息，返回一个TCPListener即TCP网络监听。TCPAddr可以通过ResolveTCPAddr方法来构造：
+func ResolveTCPAddr(network, address string) (*TCPAddr, error)  服务端代码server/main.go如下：
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;log&amp;quot; &amp;quot;net&amp;quot; &amp;quot;os&amp;quot; ) func main() { tcpAddr, _ := net.ResolveTCPAddr(&amp;quot;tcp4&amp;quot;, &amp;quot;:9000&amp;quot;) listener, err := net.ListenTCP(&amp;quot;tcp&amp;quot;, tcpAddr) checkError(err) for { conn, err := listener.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -22,5 +22,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Golang</title>
+      <link>/categories/golang/</link>
+      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/categories/golang/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
