@@ -1,5 +1,5 @@
 ---
-title: Go语言构建Socket应用(未完)
+title: Go语言构建Socket应用
 author: Kenny
 description: 如何用Go语言来构建简单的Socket应用，实现一个简单的聊天程序。
 date: 2018-01-08

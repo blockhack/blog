@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Socket on Kenny</title>
+    <title>Socket on Kenny(Blockhack)</title>
     <link>/tags/socket/</link>
-    <description>Recent content in Socket on Kenny</description>
+    <description>Recent content in Socket on Kenny(Blockhack)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>k@m.fish (Kenny)</managingEditor>
@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>Go语言构建Socket应用(未完)</title>
+      <title>Go语言构建Socket应用</title>
       <link>/posts/go/socket/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       <author>k@m.fish (Kenny)</author>

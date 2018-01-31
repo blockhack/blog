@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "zh-cn"
-title = "Kenny"
+title = "Kenny(Blockhack)"
 theme = "whiteplain"
 publishDir = "docs"
 
@@ -25,9 +25,9 @@ copyright = "&copy; Copyright 2017-2018 Kenny"
   avatar = "/images/avatar.jpg"
 
   email = "k@m.fish"
-  github = "thatk"
-  linkedin = "thatk"
-  instagram = "gxxoogle"
+  github = "blockhack"
+  linkedin = "blockhack"
+  instagram = "blockhacker"
 
   # twitter = "Twitter username"
   # facebook = "Facebook username"
