@@ -27,7 +27,6 @@ String是Redis的基础数据类型，其他所有数据类型在Redis中都体�
 
 #### Hash
 
-
 #### List
 List是一个双向链表，典型的应用场景如消息队列。如果单纯想用作数组，则不建议使用List结构，虽然Redis提供的方法可以实现基本的数组操作，但如LINDEX/LSET/LINSERT等方法时间复杂度为O(N)，谨慎使用。
 
