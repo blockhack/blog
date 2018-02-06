@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "zh-cn"
-title = "Kenny(Blockhack)"
+title = "Kenny(@Blockhack)"
 theme = "whiteplain"
 publishDir = "docs"
 
