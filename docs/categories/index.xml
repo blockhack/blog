@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Kenny(Blockhack)</title>
+    <title>Categories on Kenny(@Blockhack)</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Kenny(Blockhack)</description>
+    <description>Recent content in Categories on Kenny(@Blockhack)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>k@m.fish (Kenny)</managingEditor>
@@ -28,6 +28,15 @@
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       <author>k@m.fish (Kenny)</author>
       <guid>/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>/categories/redis/</link>
+      <pubDate>Thu, 01 Feb 2018 10:47:19 +0800</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/categories/redis/</guid>
       <description></description>
     </item>
     

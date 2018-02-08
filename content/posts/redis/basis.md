@@ -9,19 +9,18 @@ tags:
   - redis
   - basis
 slug: basis
-draft: true
 ---
-
+(未完)
 本文持续更新Redis基础知识。
 
 ## 基本概念
   - 线程安全：Redis的主要功能都基于单线程模型实现，其所有操作都是原子的，不会因并发产生数据异常；
-  - 非阻塞式IO：Redis的速度非常快，且大部分命令的算法时间复杂度都是O(1)；
+  - 非阻塞式IO，且大部分命令的算法时间复杂度都是O(1)，因此Redis的速度非常快；
 
 ## 数据结构
 Redis支持的数据结构：字符串、哈希表、链表、集合、有序集合、位图、Hyperloglogs。
 #### String
-String是最基础的数据结构，只应用String数据结构来存储的Redis类似Memcache。
+String是最基础的数据结构，只应用String数据结构来存储的Redis类似Memcached。
 
 String是Redis的基础数据类型，其他所有数据类型在Redis中都体现为String。比如操作整形的方法：INCR/INCRBY/DECR/DECRBY，可以操作保存为String的int64，而且由于Redis线程安全的特性，以上操作可以非常便利的实现高并发场景下的精确控制。应用场景如：秒杀、计数器、发号器等。
 

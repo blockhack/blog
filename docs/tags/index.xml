@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Kenny(Blockhack)</title>
+    <title>Tags on Kenny(@Blockhack)</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Kenny(Blockhack)</description>
+    <description>Recent content in Tags on Kenny(@Blockhack)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>k@m.fish (Kenny)</managingEditor>
     <webMaster>k@m.fish (Kenny)</webMaster>
     <copyright>&amp;copy; Copyright 2017-2018 Kenny</copyright>
-    <lastBuildDate>Thu, 26 May 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Feb 2018 10:47:19 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Basis</title>
+      <link>/tags/basis/</link>
+      <pubDate>Thu, 01 Feb 2018 10:47:19 +0800</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/tags/basis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Docker</title>
@@ -47,6 +56,15 @@
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       <author>k@m.fish (Kenny)</author>
       <guid>/tags/helloworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>/tags/redis/</link>
+      <pubDate>Thu, 01 Feb 2018 10:47:19 +0800</pubDate>
+      <author>k@m.fish (Kenny)</author>
+      <guid>/tags/redis/</guid>
       <description></description>
     </item>
     

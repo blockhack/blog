@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/redis/basis/</loc>
+    <lastmod>2018-02-01T10:47:19+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
     <lastmod>2018-01-08T11:19:11+08:00</lastmod>
   </url>
@@ -20,6 +25,12 @@
   <url>
     <loc>/posts/docker/helloworld_1/</loc>
     <lastmod>2016-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/basis/</loc>
+    <lastmod>2018-02-01T10:47:19+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -65,13 +76,25 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-01T10:47:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-01T10:47:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/redis/</loc>
+    <lastmod>2018-02-01T10:47:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/redis/</loc>
+    <lastmod>2018-02-01T10:47:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -88,7 +111,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-01T10:47:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
