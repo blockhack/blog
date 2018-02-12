@@ -20,16 +20,39 @@ Redis经常在业务中被重度使用，但很多开发者只会简单的get、
 ## 数据结构
 Redis支持的数据结构：string(字符串)、hash(哈希)、list(链表)、set(集合)、zset(有序集合)、bitmaps(位图)、Hyperloglogs、GEO(地理信息定位)。
 #### String
-字符串是最基础的数据结构，首先键值都是字符串，而且其他所有数据结构都是在字符串类型上构建的，比如：复杂的字符串（JSON/XML）、数字（整数/浮点数）、二进制（图片/视频/音频），值最大不能超过512MB。
-操作整形的方法：INCR/INCRBY/DECR/DECRBY，可以操作保存为string的int64，而且由于Redis线程安全的特性，以上操作可以非常便利的实现高并发场景下的精确控制。应用场景如：秒杀、计数器、发号器等。
+字符串是最基础的数据结构，首先键值都是字符串，而且其他所有数据结构都是在字符串类型上构建的，比如：复杂的字符串（JSON/XML）、数字（整数/浮点数）、二进制（图片/视频/音频），值最大不能超过512MB。Redis会根据当前值的类型和长度决定使用哪种内部编码实现，string的内部编码有下面三种：
+  - int：8个字节的长整型；
+  - embstr：小于等于39个字节的字符串；
+  - raw：大于39个字节的字符串。。
+最佳实践：
+  - 批量操作：1次批量操作和n次单次操作相比，省去了n-1次的网络时间，有助于提高业务处理效率，节约网络资源；
+  - 计数：incr/incrby/decr/decrby，由于Redis单线程架构，以上操作可以非常便利的实现高并发场景下的精确控制。应用场景如：秒杀、计数器、发号器等。
 
 #### Hash
-使用Hash替代String来控制key的数量可以大幅降低内存，
+hash的映射关系叫key-field-value，hash的内部编码有两种：
+  - ziplist（压缩列表）：当哈希类型元素个数小于hash-max-ziplist-entries配置（默认512个）、同时所有值都小于hash-max-ziplist-value配置（默认64字节）时，Redis会使用ziplist作为哈希的内部实现，ziplist使用更加紧凑的结构实现多个元素的连续存储，所以在节省内存方面比hashtable更加优秀。
+  - hashtable（哈希表）：当哈希类型无法满足ziplist的条件时，Redis会使用hashtable作为哈希的内部实现，因为此时ziplist的读写效率会下降，而hashtable的读写时间复杂度为O(1)。
+
+hash和string对比，以存储用户信息为例：
+  - string存储，一个属性一个key：key过多，内存占用较大，信息内聚性较差，不建议；
+  - 序列化string存储：提高内存使用效率，但序列化/反序列化带来额外开销；
+  - 使用hash：建议用法，要注意控制hash在ziplist和hashtable两种内部编码的转换，hashtable会占用更多内存。
 
 #### List
-List是一个双向链表，典型的应用场景如消息队列。如果单纯想用作数组，则不建议使用List结构，虽然Redis提供的方法可以实现基本的数组操作，但如LINDEX/LSET/LINSERT等方法时间复杂度为O(n)，谨慎使用。
+list中的元素有两个特点：有序、可重复。list内部编码有三种：
+  - ziplist（压缩列表）：当列表的元素个数小于list-max-ziplist-entries配置（默认512个），同时列表中每个元素的值都小于list-max-ziplist-value配置时（默认64字节），Redis会选用ziplist来作为列表的内部实现来减少内存的使用；
+  - linkedlist（链表）：当列表类型无法满足ziplist的条件时，Redis会使用linkedlist作为列表的内部实现；
+  - quicklist：Redis3.2版本提供了quicklist内部编码，简单地说它是以一个ziplist为节点的linkedlist，它结合了ziplist和linkedlist两者的优势，为列表类型提供了一种更为优秀的内部编码实现，设计原理参考：https://matt.sh/redis-quicklist。
 
-List还提供了一系列阻塞方法来更方便的实现消息队列，如BLPOP/BRPOP等，即在List为空时阻塞该连接，直到有对象可以POP时再返回。具体说明请参考[官方文档](https://redis.io/topics/data-types-intro)。
+典型的应用场景如消息队列。如果单纯想用作数组，则不建议使用list，虽然Redis提供的方法可以实现基本的数组操作，但如LINDEX/LSET/LINSERT等方法时间复杂度为O(n)，谨慎使用。List还提供了一系列阻塞方法来更方便的实现消息队列，如BLPOP/BRPOP等，即在List为空时阻塞该连接，直到有对象可以POP时再返回。具体说明请参考[官方文档](https://redis.io/topics/data-types-intro)。
+
+#### Set
+set中的元素的特点：无序、不可重复。set的内部编码有两种：
+  - intset（整数集合）：当集合中的元素都是整数且元素个数小于set-max-intset-entries配置（默认512个）时，Redis会选用intset来作为集合的内部实现，从而减少内存的使用；
+  - hashtable（哈希表）：当集合类型无法满足intset的条件时，Redis会使用hashtable作为集合的内部实现。
+
+#### zset
+
 
 ## 规范
   - 避免使用计算复杂度高的命令：使用高耗时的Redis命令是很危险的，会占用唯一的一个线程的大量处理时间，导致所有的请求都被拖慢，例如时间复杂度为O(n)的keys命令，在生产环境中禁止使用；
@@ -39,9 +62,11 @@ List还提供了一系列阻塞方法来更方便的实现消息队列，如BLPO
   - 存储JSON：除了二进制数据，通常还会使用JSON字符串存储，为了节省内存，可以选择将其压缩后再存储；
 
 ## 常见使用场景
-  - 缓存
+  - 缓存：加速读写，降低后端存储压力；
+  - 计数：反作弊，多维度计数，数据持久化；
+  - 共享Session
+  - 访问限制：限制用户访问频率；
   - 排行榜
-  - 计数器
   - 社交网络
   - 消息队列
 
